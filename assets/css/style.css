@@ -1,3 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+}
 
+body {
+  background-color: hsl(0deg, 0%, 98%);
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+}
+.header__img {
+  width: 100%;
+}
+
+.contenedor {
+  width: 80%;
+  position: absolute;
+  right: 8%;
+  left: 8%;
+  top: 8%;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+}
+.titulo__text {
+  letter-spacing: 0.2em;
+  font-size: 2rem;
+}
+
+.contenedorForm {
+  display: flex;
+  align-items: center;
+  background-color: hsl(0deg, 0%, 98%);
+  border-radius: 5px;
+  padding: 2%;
+  margin: 5% 0;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+.contenedorForm__circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid hsl(236deg, 33%, 92%);
+  border-radius: 100%;
+  margin: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedorForm__form {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2%;
+}
+.contenedorForm__form__input {
+  min-height: 26px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: hsl(0deg, 0%, 98%);
+}
+.contenedorForm i {
+  width: 1%;
+}
+
+.contendorCards {
+  background-color: hsl(0deg, 0%, 98%);
+  border-radius: 8px;
+  color: hsl(236deg, 9%, 61%);
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+.contendorCards__lista {
+  display: flex;
+  flex-direction: column;
+}
+.contendorCards__lista__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid hsl(233deg, 11%, 84%);
+  min-height: 55px;
+}
+.contendorCards__lista__card__parrafo {
+  margin: 4%;
+  width: 80%;
+}
+.contendorCards__lista__card__img {
+  width: 1rem;
+  height: 1rem;
+  margin: 2%;
+  margin-right: 5%;
+}
+
+.text__footer {
+  text-align: center;
+}
+
+.footerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4%;
+  min-height: 45px;
+}
+.footerSection span {
+  margin: 2px;
+}
+
+.list {
+  margin: 10% 0;
+  background-color: hsl(0deg, 0%, 98%);
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  padding: 2%;
+}
+.list__item {
+  margin-left: 4%;
+  text-decoration: none;
+  color: hsl(235deg, 19%, 35%);
+  font-weight: 900;
+}
+
+.active {
+  color: blue;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -4,60 +4,90 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link
       rel="shortcut icon"
       href="assets/img/favicon-32x32.png"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>TODOLIST</title>
   </head>
   <body>
-    <header>
-      <img src="assets/img/bg-mobile-light.jpg" alt="" />
+    <header class="header">
+      <img class="header__img" src="assets/img/bg-mobile-light.jpg" alt="" />
     </header>
-    <main>
-      <section>
-        <h1>TODO</h1>
-        <img src="assets/img/icon-moon.svg" alt="" />
+
+    <main class="contenedor">
+      <section class="titulo">
+        <h1 class="titulo__text">TODO</h1>
+        <a href=""
+          ><img class="titulo__img" src="assets/img/icon-moon.svg" alt=""
+        /></a>
       </section>
 
-      <section>
-        <div></div>
-        <form action="">
-          <input type="text" name="mensaje" id="mensaje" />
+      <section class="contenedorForm">
+        <div class="contenedorForm__circle">
+          <img src="assets/img/icon-check.svg" alt="" srcset="" />
+        </div>
+        <form class="contenedorForm__form" action="">
+          <input
+            class="contenedorForm__form__input"
+            type="text"
+            name="mensaje"
+            id="mensaje"
+          />
         </form>
         <i class="fa-solid fa-plus"></i>
       </section>
 
-      <section>
-        <div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              odio delectus et excepturi, commodi asperiores accusamus! Dolor
-              corrupti odio, molestiae est commodi ex ut, ipsum perferendis
-              magnam saepe facere atque.
+      <section class="contendorCards">
+        <div class="contendorCards__lista">
+          <div class="contendorCards__lista__card">
+            <div class="contenedorForm__circle">
+              <img src="assets/img/icon-check.svg" alt="" srcset="" />
+            </div>
+            <p class="contendorCards__lista__card__parrafo">
+              Estudiar para el curso fron end
             </p>
-            <img src="assets/img/icon-cross.svg" alt="" />
+            <img
+              class="contendorCards__lista__card__img"
+              src="assets/img/icon-cross.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="contendorCards__lista__card">
+            <div class="contenedorForm__circle">
+              <img src="assets/img/icon-check.svg" alt="" srcset="" />
+            </div>
+            <p class="contendorCards__lista__card__parrafo">Lorem ipsum</p>
+            <img
+              class="contendorCards__lista__card__img"
+              src="assets/img/icon-cross.svg"
+              alt=""
+            />
           </div>
         </div>
-        <div>
+        <div class="footerSection">
           <p><span>5</span>items left</p>
           <p>Clear Completed</p>
         </div>
       </section>
 
-      <section>
-        <a href="#">All</a>
-        <a href="#">Active</a>
-        <a href="#">Completed</a>
+      <section class="list">
+        <a class="list__item active" href="#">All</a>
+        <a class="list__item" href="#">Active</a>
+        <a class="list__item" href="#">Completed</a>
       </section>
-    </main>
 
-    <footer>
-      <p>Drag and drop to reader list</p>
-    </footer>
+      <p class="text__footer">Drag and drop to reader list</p>
+    </main>
   </body>
   <script src="js/main.js" type="module"></script>
   <script
