@@ -75,9 +75,14 @@ body {
       border: none;
       background-color: $VeryLightGray;
     }
+    &__input:focus {
+      outline: none;
+      background-color: $VeryLightGray;
+    }
   }
   i {
     width: 1%;
+    cursor: pointer;
   }
 }
 
@@ -107,6 +112,7 @@ body {
         height: 1rem;
         margin: 2%;
         margin-right: 5%;
+        cursor: pointer;
       }
     }
   }
@@ -148,4 +154,41 @@ body {
 
 .active {
   color: blue;
+}
+
+.desktop__img {
+  display: none;
+}
+
+.vacio {
+  border: 2px solid red !important;
+}
+
+.mensaje__error {
+  color: red;
+  margin-bottom: 2%;
+}
+
+@media screen and (min-width: 780px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contenedor {
+    width: 30%;
+    min-width: 400px;
+    left: 33%;
+    right: 50%;
+  }
+
+  .movil__img {
+    display: none;
+  }
+
+  .desktop__img {
+    display: block;
+    height: 500px;
+  }
 }

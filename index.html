@@ -20,7 +20,16 @@
   </head>
   <body>
     <header class="header">
-      <img class="header__img" src="assets/img/bg-mobile-light.jpg" alt="" />
+      <img
+        class="header__img movil__img"
+        src="assets/img/bg-mobile-light.jpg"
+        alt=""
+      />
+      <img
+        class="header__img desktop__img"
+        src="assets/img/bg-desktop-light.jpg"
+        alt=""
+      />
     </header>
 
     <main class="contenedor">
@@ -35,7 +44,7 @@
         <div class="contenedorForm__circle">
           <img src="assets/img/icon-check.svg" alt="" srcset="" />
         </div>
-        <form class="contenedorForm__form" action="">
+        <form class="contenedorForm__form" action="" id="form">
           <input
             class="contenedorForm__form__input"
             type="text"
@@ -43,25 +52,11 @@
             id="mensaje"
           />
         </form>
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus" id="plus"></i>
       </section>
 
       <section class="contendorCards">
-        <div class="contendorCards__lista">
-          <div class="contendorCards__lista__card">
-            <div class="contenedorForm__circle">
-              <img src="assets/img/icon-check.svg" alt="" srcset="" />
-            </div>
-            <p class="contendorCards__lista__card__parrafo">
-              Estudiar para el curso fron end
-            </p>
-            <img
-              class="contendorCards__lista__card__img"
-              src="assets/img/icon-cross.svg"
-              alt=""
-            />
-          </div>
-
+        <div class="contendorCards__lista" id="contenedorTareas">
           <div class="contendorCards__lista__card">
             <div class="contenedorForm__circle">
               <img src="assets/img/icon-check.svg" alt="" srcset="" />
@@ -75,7 +70,7 @@
           </div>
         </div>
         <div class="footerSection">
-          <p><span>5</span>items left</p>
+          <p><span id="count">0</span>items left</p>
           <p>Clear Completed</p>
         </div>
       </section>
