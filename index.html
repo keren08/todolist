@@ -24,25 +24,36 @@
         class="header__img movil__img"
         src="assets/img/bg-mobile-light.jpg"
         alt=""
+        id="img_movil"
       />
       <img
         class="header__img desktop__img"
         src="assets/img/bg-desktop-light.jpg"
         alt=""
+        id="img_desktop"
       />
     </header>
 
     <main class="contenedor">
       <section class="titulo">
         <h1 class="titulo__text">TODO</h1>
-        <a href=""
-          ><img class="titulo__img" src="assets/img/icon-moon.svg" alt=""
-        /></a>
+        <img
+          class="titulo__img"
+          src="assets/img/icon-moon.svg"
+          alt=""
+          id="modo"
+          modo="claro"
+        />
       </section>
 
       <section class="contenedorForm">
         <div class="contenedorForm__circle">
-          <img src="assets/img/icon-check.svg" alt="" srcset="" />
+          <img
+            src="assets/img/icon-check.svg"
+            alt=""
+            srcset=""
+            class="hidden"
+          />
         </div>
         <form class="contenedorForm__form" action="" id="form">
           <input
@@ -56,19 +67,7 @@
       </section>
 
       <section class="contendorCards">
-        <div class="contendorCards__lista" id="contenedorTareas">
-          <div class="contendorCards__lista__card">
-            <div class="contenedorForm__circle">
-              <img src="assets/img/icon-check.svg" alt="" srcset="" />
-            </div>
-            <p class="contendorCards__lista__card__parrafo">Lorem ipsum</p>
-            <img
-              class="contendorCards__lista__card__img"
-              src="assets/img/icon-cross.svg"
-              alt=""
-            />
-          </div>
-        </div>
+        <div class="contendorCards__lista" id="contenedorTareas"></div>
         <div class="footerSection">
           <p><span id="count">0</span>items left</p>
           <p>Clear Completed</p>

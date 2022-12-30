@@ -36,7 +36,7 @@ class Tarea {
           class="contendorCards__lista__card__img"
           src="assets/img/icon-cross.svg"
           alt=""
-
+          class="hidden"
         />
       </div>`;
 
