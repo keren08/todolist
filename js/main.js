@@ -12,11 +12,12 @@ const imgDesktop = document.getElementById("img_desktop");
 
 let tarea = "";
 let listaTareas = [];
-
+//evita q recarge pagina
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
+//detecta cuando se preciona enter para llamar la funcion de guardar tarea en el array
 mensaje.addEventListener("keypress", (e) => {
   let mensajeText = mensaje.value;
   if (e.key == "Enter") {
@@ -25,19 +26,21 @@ mensaje.addEventListener("keypress", (e) => {
   }
 });
 
+//detecta cuando se preciona el mas para llamar la funcion de guardar tarea en el array
 plus.addEventListener("click", (e) => {
   let mensajeText = mensaje.value;
   agregarTarea(mensajeText);
   Tarea.vaciarTexto(mensaje);
 });
 
+//detecta si dan click en la x y eliminar la tarea
 divTareas.addEventListener("click", (e) => {
   if (e.target.tagName == "IMG") {
     listaTareas = Tarea.quitarTareaHTLM(listaTareas, e.target);
     Tarea.countTarea(listaTareas, count);
   }
 });
-
+//detecta si dan click en el sol o luna  y cambia de modo claro a oscuro y viceversa
 modo.addEventListener("click", (e) => {
   if (modo.getAttribute("modo") == "claro") {
     Color.cambiarOscuro();
@@ -54,6 +57,7 @@ modo.addEventListener("click", (e) => {
   }
 });
 
+//funcion de agregar tarea si no esta vacio el input
 function agregarTarea(mensajeText) {
   if (!Tarea.validarTarea(mensajeText, mensaje)) {
     tarea = new Tarea(Tarea.idTarea(listaTareas), mensajeText, false);

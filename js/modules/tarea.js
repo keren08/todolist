@@ -5,6 +5,7 @@ class Tarea {
     this.estado = estado;
   }
 
+  // agregar o quita mensajes de error si el input esta vacio
   static validarTarea(tarea, element) {
     let vacio = tarea == "" ? true : false;
     let tag = element.parentElement.parentElement.nextElementSibling.tagName;
@@ -22,6 +23,7 @@ class Tarea {
     return vacio;
   }
 
+  //genera la lista de tareas en html
   static agregarTareaHTML(array, element) {
     element.innerHTML = "";
     array.forEach((tarea) => {
@@ -43,7 +45,7 @@ class Tarea {
       element.insertAdjacentHTML("beforeend", html);
     });
   }
-
+  //quita tarea del array
   static quitarTareaHTLM(array, element) {
     let id = element.parentElement.getAttribute("IdTarea");
     array.forEach((tareas, index) => {
@@ -55,7 +57,7 @@ class Tarea {
 
     return array;
   }
-
+  //busca cual es el ultimo id creado, y le suma un para crear el id de la nueva tarea
   static idTarea(array) {
     let ids = [];
     let nextId = 0;
@@ -67,6 +69,7 @@ class Tarea {
     return nextId;
   }
 
+  //actualiza el contador de tareas
   static countTarea(array, element) {
     let totalElementos = array.length;
     element.textContent = totalElementos;
