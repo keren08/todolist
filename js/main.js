@@ -39,6 +39,16 @@ divTareas.addEventListener("click", (e) => {
     listaTareas = Tarea.quitarTareaHTLM(listaTareas, e.target);
     Tarea.countTarea(listaTareas, count);
   }
+
+  if (e.target.tagName == "DIV") {
+    listaTareas = Tarea.tareaRealizada(listaTareas, e.target);
+    Tarea.agregarTareaHTML(listaTareas, divTareas);
+  }
+
+  if (e.target.tagName == "IMG" && e.target.className == "check") {
+    listaTareas = Tarea.tareaRealizada(listaTareas, e.target.parentElement);
+    Tarea.agregarTareaHTML(listaTareas, divTareas);
+  }
 });
 //detecta si dan click en el sol o luna  y cambia de modo claro a oscuro y viceversa
 modo.addEventListener("click", (e) => {

@@ -181,6 +181,15 @@ body {
   display: none;
 }
 
+.realizada {
+  background: rgb(111, 67, 214);
+  background: linear-gradient(83deg, rgb(111, 67, 214) 41%, rgb(162, 88, 219) 98%);
+}
+
+.tachar {
+  text-decoration: line-through;
+}
+
 @media screen and (min-width: 780px) {
   body {
     display: flex;

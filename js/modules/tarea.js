@@ -27,11 +27,15 @@ class Tarea {
   static agregarTareaHTML(array, element) {
     element.innerHTML = "";
     array.forEach((tarea) => {
-      const html = ` <div class="contendorCards__lista__card" IdTarea='${tarea.id}'>
-        <div class="contenedorForm__circle">
-          <img src="assets/img/icon-check.svg" alt="" srcset="" />
+      let hidden = tarea.estado ? "" : "hidden";
+      let realizada = tarea.estado ? "realizada" : "";
+      let tachar = tarea.estado ? "tachar" : "";
+
+      const html = ` <div class="contendorCards__lista__card" IdTarea='${tarea.id}' Estado='${tarea.estado}'>
+        <div class="contenedorForm__circle ${realizada}">
+          <img src="assets/img/icon-check.svg" alt="" srcset=""class='check' ${hidden}/>
         </div>
-        <p class="contendorCards__lista__card__parrafo">
+        <p class="contendorCards__lista__card__parrafo ${tachar}">
           ${tarea.tarea}
         </p>
         <img
@@ -78,6 +82,19 @@ class Tarea {
 
   static vaciarTexto(element) {
     element.value = "";
+  }
+
+  static tareaRealizada(array, element) {
+    let id = element.parentElement.getAttribute("IdTarea");
+    array.forEach((tareas) => {
+      if (tareas.id == parseInt(id) && tareas.estado == false) {
+        tareas.estado = true;
+      } else if (tareas.id == parseInt(id) && tareas.estado == true) {
+        tareas.estado = false;
+      }
+    });
+
+    return array;
   }
 }
 
