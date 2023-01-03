@@ -5,6 +5,7 @@ class Tarea {
     this.estado = estado;
   }
 
+  // agregar o quita mensajes de error si el input esta vacio
   static validarTarea(tarea, element) {
     let vacio = tarea == "" ? true : false;
     let tag = element.parentElement.parentElement.nextElementSibling.tagName;
@@ -22,14 +23,19 @@ class Tarea {
     return vacio;
   }
 
+  //genera la lista de tareas en html
   static agregarTareaHTML(array, element) {
     element.innerHTML = "";
     array.forEach((tarea) => {
-      const html = ` <div class="contendorCards__lista__card" IdTarea='${tarea.id}'>
-        <div class="contenedorForm__circle">
-          <img src="assets/img/icon-check.svg" alt="" srcset="" />
+      let hidden = tarea.estado ? "" : "hidden";
+      let realizada = tarea.estado ? "realizada" : "";
+      let tachar = tarea.estado ? "tachar" : "";
+
+      const html = ` <div class="contendorCards__lista__card" IdTarea='${tarea.id}' Estado='${tarea.estado}'>
+        <div class="contenedorForm__circle ${realizada}">
+          <img src="assets/img/icon-check.svg" alt="" srcset=""class='check' ${hidden}/>
         </div>
-        <p class="contendorCards__lista__card__parrafo">
+        <p class="contendorCards__lista__card__parrafo ${tachar}">
           ${tarea.tarea}
         </p>
         <img
@@ -43,7 +49,7 @@ class Tarea {
       element.insertAdjacentHTML("beforeend", html);
     });
   }
-
+  //quita tarea del array
   static quitarTareaHTLM(array, element) {
     let id = element.parentElement.getAttribute("IdTarea");
     array.forEach((tareas, index) => {
@@ -55,7 +61,7 @@ class Tarea {
 
     return array;
   }
-
+  //busca cual es el ultimo id creado, y le suma un para crear el id de la nueva tarea
   static idTarea(array) {
     let ids = [];
     let nextId = 0;
@@ -67,6 +73,7 @@ class Tarea {
     return nextId;
   }
 
+  //actualiza el contador de tareas
   static countTarea(array, element) {
     let totalElementos = array.length;
     element.textContent = totalElementos;
@@ -75,6 +82,19 @@ class Tarea {
 
   static vaciarTexto(element) {
     element.value = "";
+  }
+
+  static tareaRealizada(array, element) {
+    let id = element.parentElement.getAttribute("IdTarea");
+    array.forEach((tareas) => {
+      if (tareas.id == parseInt(id) && tareas.estado == false) {
+        tareas.estado = true;
+      } else if (tareas.id == parseInt(id) && tareas.estado == true) {
+        tareas.estado = false;
+      }
+    });
+
+    return array;
   }
 }
 

@@ -1,5 +1,6 @@
 class Color {
-  static cambiarClaro(imgH, imgLuna) {
+  //cambias las variables css a claras
+  static cambiarClaro() {
     document.documentElement.style.setProperty(
       "--VeryLightGray",
       "hsl(0, 0%, 98%)"
@@ -25,8 +26,8 @@ class Color {
       "rgb(255, 255, 255)"
     );
   }
-
-  static cambiarOscuro(imgH, imgSol) {
+  //cambias las variables css a oscuro
+  static cambiarOscuro() {
     document.documentElement.style.setProperty(
       "--VeryLightGray",
       "hsl(235, 21%, 11%)"
