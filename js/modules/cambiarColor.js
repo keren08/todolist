@@ -1,3 +1,5 @@
+import LocalStorage from "./localStorage.js";
+
 class Color {
   //cambias las variables css a claras
   static cambiarClaro() {
@@ -25,6 +27,7 @@ class Color {
       "--boxshadow",
       "rgb(255, 255, 255)"
     );
+    LocalStorage.agregarModo("claro");
   }
   //cambias las variables css a oscuro
   static cambiarOscuro() {
@@ -52,6 +55,7 @@ class Color {
       "--boxshadow",
       "hsl(236deg 7% 27%)"
     );
+    LocalStorage.agregarModo("oscuro");
   }
 }
 
