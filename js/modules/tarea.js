@@ -1,3 +1,4 @@
+import LocalStorage from "./localStorage.js";
 class Tarea {
   constructor(id, tarea, estado) {
     this.id = id;
@@ -24,7 +25,7 @@ class Tarea {
   }
 
   //genera la lista de tareas en html
-  static agregarTareaHTML(array, element) {
+  static agregarTareaHTML(array, element, guardar) {
     element.innerHTML = "";
     array.forEach((tarea) => {
       let hidden = tarea.estado ? "" : "hidden";
@@ -48,6 +49,9 @@ class Tarea {
 
       element.insertAdjacentHTML("beforeend", html);
     });
+    if (guardar) {
+      LocalStorage.agregarTarea(array);
+    }
   }
   //quita tarea del array
   static quitarTareaHTLM(array, element) {
@@ -58,7 +62,7 @@ class Tarea {
         element.parentElement.remove();
       }
     });
-
+    LocalStorage.agregarTarea(array);
     return array;
   }
   //busca cual es el ultimo id creado, y le suma un para crear el id de la nueva tarea
@@ -84,6 +88,7 @@ class Tarea {
     element.value = "";
   }
 
+  //cambia el estado de una tarea
   static tareaRealizada(array, element) {
     let id = element.parentElement.getAttribute("IdTarea");
     array.forEach((tareas) => {
